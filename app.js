@@ -117,7 +117,7 @@ app.get("/players/:playerId/playerScores/", async (request, response) => {
     player_details.player_id = player_match_score.player_id
     WHERE player_details.player_id = ${playerId};
     `;
-  const dbResponse = await db.all(query);
+  const dbResponse = await db.get(query);
   response.send(dbResponse);
 });
 
